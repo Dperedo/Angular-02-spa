@@ -77,12 +77,14 @@ export class HeroesService {
 
       console.log('Termino:' + termino);
 
-      for( let heroe of this.heroes ){
+      for( let i = 0; i < this.heroes.length; i++ ){
+
+        let heroe = this.heroes[i];
 
         let nombre = heroe.nombre.toLowerCase();
         if( nombre.indexOf( termino ) >= 0 ){
-         
-          heroesArr.push( heroe )
+          heroe.idx = i;
+          heroesArr.push( heroe );
         }
 
         console.log('Nombre:' + nombre);
